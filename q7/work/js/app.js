@@ -1,0 +1,42 @@
+$(function(){
+  $(".btn").on("click",function(){
+    //btnクリック時に
+    console.log("名字");
+    console.log($("#family__name").val());
+    //コンソールに名字を表示
+    console.log("名前");
+    console.log($("#given__name").val());
+    //コンソールに名前を表示
+    console.log("生年月日");
+    console.log($("[name=year]").val() + "年" + $("[name=month]").val() + "月" + $("[name=day]").val() + "日");
+    //コンソールに生年月日を表示
+    console.log("性別");
+    console.log($("[name=gender]:checked").val());
+    //コンソールにチェックされた性別のvalueを表示
+    console.log("職業");
+    console.log($("[name=work]").val());
+    //コンソールに職業名を表示
+    console.log("アカウント名");
+    console.log($("#account__name").val());
+    //コンソールにアカウント名を表示
+    console.log("メールアドレス");
+    console.log($("#email").val())
+    //コンソールにEメールアドレスを表示
+    console.log("パスワード");
+    console.log($("#password").val())
+    //コンソールにパスワードを表示
+    console.log("確認用パスワード");
+    console.log($("#duplication__password").val())
+    //コンソールに確認用パスワード表示
+    console.log("住所");
+    console.log($("#address").val())
+    //コンソールに住所表示
+    console.log("電話番号");
+    console.log($("#tel").val())
+    //コンソールに電話番号表示
+    console.log("購読情報");
+    console.log($("[id=email__magazine]").val())
+    console.log($("[id=coupon]").val())
+    //コンソールにメルマガジンとクーポンのvalue表示
+  })
+})

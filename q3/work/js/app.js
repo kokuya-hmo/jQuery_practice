@@ -1,0 +1,21 @@
+
+$(function(){
+  $(".drawer_button").on("click",function(){
+    //drawer_buttonクリック時に
+    $(this).toggleClass("active");
+    //drawer_buttonにクラス名activeをなければ追加しあれば削除
+    $(".drawer_nav_wrapper").toggleClass("open");
+    //drawer_nav_wrappeにクラス名openをなければ追加しあれば削除
+    $(".drawer_bg").toggle();
+    //drawer_bgをあれば追加し、なければ削除
+  });
+  $(".drawer_bg").on("click",function(){
+    //drawer_bgクリック時に
+    $(this).toggle();
+    //drawer_bgをあれば追加し、なければ削除
+    $(".drawer_button").toggleClass("active");
+    //drawer_buttonにクラス名activeをなければ追加しあれば削除
+    $(".drawer_nav_wrapper").toggleClass("open");
+    //drawer_nav_wrappeにクラス名openをなければ追加しあれば削除
+  });
+});
