@@ -2,7 +2,7 @@ $(function(){
   $("#q1").css("color","green");
   //q1を読み込んだ時にcssのcolorを#28a44aに変更
 
-
+  
   $("#q2").on("click",function(){
     //q2をクリック時に
     $(this).css("background-color","pink");
