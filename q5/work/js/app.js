@@ -1,11 +1,11 @@
 $(function(){
-  $("ul.dropdwn li").hover(function(){
+  $(".dropdwn li").hover(function(){
     //dropdwnのliをホバー（カーソルがのった）時に
-    $("ul:not(:animated)",this).slideDown();
-    //dropdwn_menuをslideDownで表示（アニメーション実行途中にアニメーションを実行しない）
+    $(this).children("ul").stop().slideDown();
+    //dropdwn liの子要素を取得。slideDownで表示　slidedownが最後まで実行されていなくてもその状態から対のアニメーションが実行される
   }, function(){
     //カーソルが離れたときに
-    $("ul.dropdwn_menu",this).slideUp();
-    //dropdwn_menuをslideUp表示
+    $(this).children("ul").stop().slideUp();
+    //dropdwn　liの子要素取得。slideUpで表示　slideUpが最後まで実行されていなくてもその状態から対のアニメーションが実行される
   });
 });
