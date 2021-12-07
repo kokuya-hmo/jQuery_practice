@@ -21,8 +21,20 @@ $(function(){
       "url": `https://ci.nii.ac.jp/books/opensearch/search?title=${searchWord}&format=json&p=${pageCount}&count=20`,
       "method": "GET",
     }
-    function displayResult(x){
-    //下記の処理をdisplayResultという変数に格納
+// Ajaxの実行
+//.doneが通信成功した時の処理、”response”が引数となっていて通信した結果を受け取っている
+    $.ajax(settings).done(function (response) {
+      const result = response['@graph'];
+      //resultに[@graph]データを格納
+      displayResult(result)
+      //deisplayResultを実行
+    }).fail(function (err) {
+  //.failが通信に失敗した時の処理、”err”にサーバーから送られてきたエラー内容を受け取っている
+      displayError(err)
+    });
+  });
+  function displayResult(x){
+    //下記の処理をdisplayResulC:\Users\hmomo\prs-work\jQuery\実装\jquery_practice\q8\work\index.htmltという変数に格納
     $(".message").remove();
     //messageのクラス名の要素を削除
     if (x[0].items !== undefined){
@@ -50,18 +62,6 @@ $(function(){
     $(".lists").before('<div class="message">正常に通信できませんでした。<br>インターネットの接続の確認をしてください。</div>');
     //messageを追加
   };
-// Ajaxの実行
-//.doneが通信成功した時の処理、”response”が引数となっていて通信した結果を受け取っている
-    $.ajax(settings).done(function (response) {
-      const result = response['@graph'];
-      //resultに[@graph]データを格納
-      displayResult(result)
-      //deisplayResultを実行
-    }).fail(function (err) {
-  //.failが通信に失敗した時の処理、”err”にサーバーから送られてきたエラー内容を受け取っている
-      displayError(err)
-    });
-  });
   $(".reset-btn").on("click",function(){
     //reset-btnが押されたときに実行
     $(".lists").empty();
