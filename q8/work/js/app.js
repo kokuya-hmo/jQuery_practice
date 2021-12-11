@@ -55,7 +55,7 @@ $(function(){
   function  displayError(err){
   //関数名displayerrorに以下の処理を格納
       if(err.status === 0){
-      //errのstatusの値が0の時
+      //errのstatusの値が0の時に
         $(".lists").empty();
         //lists要素を空に
         $(".message").remove();
