@@ -62,7 +62,7 @@ $(function(){
         //message要素を空に
         $(".lists").before('<div class="message">正常に通信できませんでした。<br>インターネットの接続の確認をしてください。</div>');
         //messageを追加
-      }
+      };
   };
   $(".reset-btn").on("click",function(){
   //reset-btnが押されたときに実行
