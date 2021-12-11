@@ -55,13 +55,14 @@ $(function(){
   function  displayError(err){
   //関数名displayerrorに以下の処理を格納
       if(err.status === 0){
+      //errのstatusの値が0の時
         $(".lists").empty();
         //lists要素を空に
         $(".message").remove();
         //message要素を空に
         $(".lists").before('<div class="message">正常に通信できませんでした。<br>インターネットの接続の確認をしてください。</div>');
         //messageを追加
-      }
+      };
   };
   $(".reset-btn").on("click",function(){
   //reset-btnが押されたときに実行
